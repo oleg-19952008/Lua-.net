@@ -1,0 +1,4 @@
+c:\users\1\documents\visual studio 2015\Projects\api lua\test.api_lua\bin\Debug\test.api_lua.dll
+c:\users\1\documents\visual studio 2015\Projects\api lua\test.api_lua\bin\Debug\test.api_lua.pdb
+c:\users\1\documents\visual studio 2015\Projects\api lua\test.api_lua\obj\Debug\test.api_lua.dll
+c:\users\1\documents\visual studio 2015\Projects\api lua\test.api_lua\obj\Debug\test.api_lua.pdb

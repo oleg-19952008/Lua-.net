@@ -1,0 +1,5 @@
+c:\users\1\documents\visual studio 2015\Projects\api lua\test.api_lua\bin\Debug\test_api_lua.dll
+c:\users\1\documents\visual studio 2015\Projects\api lua\test.api_lua\bin\Debug\test_api_lua.pdb
+c:\users\1\documents\visual studio 2015\Projects\api lua\test.api_lua\obj\Debug\test_api_lua.dll
+c:\users\1\documents\visual studio 2015\Projects\api lua\test.api_lua\obj\Debug\test_api_lua.pdb
+c:\users\1\documents\visual studio 2015\Projects\api lua\test.api_lua\obj\Debug\test_api_lua.csprojResolveAssemblyReference.cache
