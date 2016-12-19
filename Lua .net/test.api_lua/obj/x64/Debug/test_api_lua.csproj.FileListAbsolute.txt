@@ -7,4 +7,3 @@ C:\Users\1\Documents\GitHub\Lua-.net\Lua .net\test.api_lua\bin\x64\Debug\test_ap
 C:\Users\1\Documents\GitHub\Lua-.net\Lua .net\test.api_lua\bin\x64\Debug\test_api_lua.pdb
 C:\Users\1\Documents\GitHub\Lua-.net\Lua .net\test.api_lua\obj\x64\Debug\test_api_lua.dll
 C:\Users\1\Documents\GitHub\Lua-.net\Lua .net\test.api_lua\obj\x64\Debug\test_api_lua.pdb
-C:\Users\1\Documents\GitHub\Lua-.net\Lua .net\test.api_lua\obj\x64\Debug\test_api_lua.csprojResolveAssemblyReference.cache
