@@ -8,9 +8,6 @@ namespace test_api_lua
 {
    public   class Class1
     {
-        public void test_(string a)
-        {
-            Console.WriteLine("this is test " + a);
-        }
+      //todo
     }
 }

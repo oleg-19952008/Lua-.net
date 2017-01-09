@@ -59,16 +59,21 @@ namespace Lua_net_ex_
             {
                 new Core().echo("Lua interpeter v0.1.2 based on core Lua 5.2 and used NLua lib\n");
                 lua.DoFile("init.lua");
+                Console.Write(">");
             }
 
             try
             {
                 Console.Write(">");
                 var command = Console.ReadLine();
+                if(command.Split(' ')[0]== "exec")
+                {
+                    new Core().exec(command.Split(' ')[1]);
+                }
                 lua.DoString(command);
-
+                string[]  sp = { "", " " };
                 //  lua.DoFile( "init.lua");    
-                Console.Read();
+                Main(sp);
             }
             catch (NLua.Exceptions.LuaException e)
             {
@@ -128,8 +133,10 @@ namespace Lua_net_ex_
         }
         public void exec(object a)
         {
+            var lua = new Lua();
+            lua["Core"] = new Lua_net_ex_.Core();
             echo("Execute script " + a.ToString());
-            new Lua().DoFile(a.ToString());
+           lua.DoFile(a.ToString());
         }
         public void run(string a)
         {
@@ -151,9 +158,78 @@ namespace Lua_net_ex_
         {
             Console.Read();
         }
-        public void BackgroundColor(int a)
+        public void ForegroundColor(int a)
         {
-            // var s = Console.ForegroundColor= ConsoleColor
+            /* Foreground */
+            if (a == 1)
+            {
+                Console.ForegroundColor = ConsoleColor.Black;
+            }
+            if (a == 2)
+            {
+                Console.ForegroundColor = ConsoleColor.Blue;
+            }
+            if (a ==3)
+            {
+                Console.ForegroundColor = ConsoleColor.Cyan;
+            }
+            if (a == 4)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkBlue;
+            }
+            if (a == 5)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
+            }
+            if (a == 6)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkGray;
+            }
+            if (a == 7)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+            }
+            if (a == 8)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkMagenta;
+            }
+            if (a == 9)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+            }
+            if (a == 10)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
+            }
+            if (a ==11)
+            {
+                Console.ForegroundColor = ConsoleColor.Gray;
+            }
+            if (a == 12)
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+            }
+            if (a == 13)
+            {
+                Console.ForegroundColor = ConsoleColor.Magenta;
+            }
+            if (a == 14)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+            }
+            if (a == 15)
+            {
+                Console.ForegroundColor = ConsoleColor.White;
+            }
+            if (a == 16)
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+            }           
+
+        }
+        public string ReadLine()
+        {
+           return Console.ReadLine();
         }
         public void Excteption(string s)
         {
