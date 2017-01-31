@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Net;
+using System.Net.Http;
+
 using System.Net.Sockets;
 using System.Threading.Tasks;
 using System.Windows; 
@@ -20,11 +23,16 @@ namespace Lua_net_ex_
         https://habrahabr.ru/post/197262/
         */
         public static Socket socket_ = null;
-        public void MEmory()
+        public const string VERSION = "Lua interpeter v0.1.3.1 based on core Lua 5.2 and used NLua lib\n";
+        public void Init_Color()
         {
             Console.BackgroundColor = ConsoleColor.Blue;
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.White;
+        }
+        public void MEmory()
+        {
+
             while (true)
             {
                 Console.Title = new lib.core.title.title().title_mem_string_64();
@@ -44,6 +52,7 @@ namespace Lua_net_ex_
         }
         static void Main(string[] args)
         {
+            new Core().Init_Color();
             //new Lua_net_ex.Core.Net.Tcp.socket(socket_).start("127.0.0.1", 8080);
             //      new System.Threading.Thread(new Core().memory).Start();
 
@@ -57,21 +66,21 @@ namespace Lua_net_ex_
             }
             else
             {
-                new Core().echo("Lua interpeter v0.1.2 based on core Lua 5.2 and used NLua lib\n");
+                new Core().echo(VERSION);
                 lua.DoFile("init.lua");
-                Console.Write(">");
-            }
 
+            }
+            Console.Write(">");
             try
             {
-                Console.Write(">");
+                //  Console.Write(">");
                 var command = Console.ReadLine();
-                if(command.Split(' ')[0]== "exec")
+                if (command.Split(' ')[0] == "exec")
                 {
                     new Core().exec(command.Split(' ')[1]);
                 }
                 lua.DoString(command);
-                string[]  sp = { "", " " };
+                string[] sp = { "", " " };
                 //  lua.DoFile( "init.lua");    
                 Main(sp);
             }
@@ -81,9 +90,9 @@ namespace Lua_net_ex_
                 //Console.WriteLine("init.lua not found\nCreate file 'init.lua and add code in file.'\nFor exit press any key");
                 Console.Read();
             }
+
         }
 
-        // class io.*
         public string FileReadToString(object adr)
         {
             return System.IO.File.ReadAllText(adr.ToString());
@@ -110,6 +119,7 @@ namespace Lua_net_ex_
             File.WriteAllText(Environment.CurrentDirectory + "/Encoded_" + s.ToString(), enc);
             return Convert.ToBase64String(Encoding.UTF8.GetBytes(FileReadToString(s)));
         }
+
         public void LoadNetDll(string a, string namespace_)
         {
             echo("Not coded it`s ");
@@ -133,10 +143,17 @@ namespace Lua_net_ex_
         }
         public void exec(object a)
         {
-            var lua = new Lua();
-            lua["Core"] = new Lua_net_ex_.Core();
-            echo("Execute script " + a.ToString());
-           lua.DoFile(a.ToString());
+            try
+            {
+                var lua = new Lua();
+                lua["Core"] = new Lua_net_ex_.Core();
+                echo("Execute script " + a.ToString());
+                lua.DoString("require('" + a.ToString() + "')");
+            }
+            catch (Exception e)
+            {
+                Excteption(e);
+            }
         }
         public void run(string a)
         {
@@ -169,7 +186,7 @@ namespace Lua_net_ex_
             {
                 Console.ForegroundColor = ConsoleColor.Blue;
             }
-            if (a ==3)
+            if (a == 3)
             {
                 Console.ForegroundColor = ConsoleColor.Cyan;
             }
@@ -201,7 +218,7 @@ namespace Lua_net_ex_
             {
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
             }
-            if (a ==11)
+            if (a == 11)
             {
                 Console.ForegroundColor = ConsoleColor.Gray;
             }
@@ -224,23 +241,24 @@ namespace Lua_net_ex_
             if (a == 16)
             {
                 Console.ForegroundColor = ConsoleColor.Yellow;
-            }           
+            }
 
         }
         public string ReadLine()
         {
-           return Console.ReadLine();
+            return Console.ReadLine();
         }
-        public void Excteption(string s)
+        public void Excteption(object s)
         {
+
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Exception at " + s);
+            Console.WriteLine("Exception at " + s.ToString());
             Console.ForegroundColor = ConsoleColor.White;
         }
         public void import(string a)
         {
             // var la = new Lua;
-            new Lua().DoString("require('" + a + "');"); System.Threading.Thread.Sleep(10);
+            new Lua().DoString("require('" + a + "');"); System.Threading.Thread.Sleep(5);
         }
         public void ping(string ip)
         {
@@ -298,6 +316,36 @@ namespace Lua_net_ex_
         public string DecodeBase64(object a)
         {
             return Encoding.UTF8.GetString(Convert.FromBase64String(a.ToString()));
+        }
+        public void wget(string url, string name, bool showRes)
+        {
+            echo("File from " + url + " download...");
+            if (url.StartsWith("http") || url.StartsWith("https"))
+            {
+                WebClient wb = new WebClient();
+                string file = wb.DownloadString(url);
+
+                File.WriteAllText(Environment.CurrentDirectory + "\\" + name, file);
+                echo("done !");
+                if (showRes == true)
+                {
+                    echo(file);
+                }
+                //   echo(file);
+            }
+            else
+            {
+                WebClient wb = new WebClient();
+                string file = wb.DownloadString("http://" + url);
+
+                File.WriteAllText(Environment.CurrentDirectory + "\\" + name, file);
+
+                if (showRes == true)
+                {
+                    echo(file);
+                }
+                echo("done !");
+            }
         }
     }
 }
