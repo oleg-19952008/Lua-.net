@@ -1,0 +1,6 @@
+D:\Users\o.borisychev.BRAVOSOFT\desktop\Lua-.net-master\Lua-.net-master\Lua .net\Lua .net\bin\x86\Lua .net ex.exe.config
+D:\Users\o.borisychev.BRAVOSOFT\desktop\Lua-.net-master\Lua-.net-master\Lua .net\Lua .net\bin\x86\Lua .net ex.exe
+D:\Users\o.borisychev.BRAVOSOFT\desktop\Lua-.net-master\Lua-.net-master\Lua .net\Lua .net\bin\x86\core.title.dll
+D:\Users\o.borisychev.BRAVOSOFT\desktop\Lua-.net-master\Lua-.net-master\Lua .net\Lua .net\bin\x86\NLua.dll
+D:\Users\o.borisychev.BRAVOSOFT\desktop\Lua-.net-master\Lua-.net-master\Lua .net\Lua .net\bin\x86\KeraLua.dll
+D:\Users\o.borisychev.BRAVOSOFT\desktop\Lua-.net-master\Lua-.net-master\Lua .net\Lua .net\obj\x86\Lua .net ex.exe

