@@ -39,3 +39,8 @@ D:\Users\o.borisychev.BRAVOSOFT\desktop\Lua-.net-master\Lua-.net-master\Lua .net
 D:\Users\o.borisychev.BRAVOSOFT\desktop\Lua-.net-master\Lua-.net-master\Lua .net\Lua .net\bin\Debug\NLua.dll
 D:\Users\o.borisychev.BRAVOSOFT\desktop\Lua-.net-master\Lua-.net-master\Lua .net\Lua .net\bin\Debug\KeraLua.dll
 D:\Users\o.borisychev.BRAVOSOFT\desktop\Lua-.net-master\Lua-.net-master\Lua .net\Lua .net\obj\Debug\Lua .net ex.exe
+C:\Users\admin\Documents\GitHub\Lua-.net\Lua .net\bin\Debug\Lua .net ex.exe.config
+C:\Users\admin\Documents\GitHub\Lua-.net\Lua .net\bin\Debug\Lua .net ex.exe
+C:\Users\admin\Documents\GitHub\Lua-.net\Lua .net\bin\Debug\KeraLua.dll
+C:\Users\admin\Documents\GitHub\Lua-.net\Lua .net\obj\Debug\Lua .net.csprojResolveAssemblyReference.cache
+C:\Users\admin\Documents\GitHub\Lua-.net\Lua .net\obj\Debug\Lua .net ex.exe

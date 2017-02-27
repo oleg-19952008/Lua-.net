@@ -4,3 +4,10 @@ D:\Users\o.borisychev.BRAVOSOFT\desktop\Lua-.net-master\Lua-.net-master\Lua .net
 D:\Users\o.borisychev.BRAVOSOFT\desktop\Lua-.net-master\Lua-.net-master\Lua .net\Lua .net\bin\x86\NLua.dll
 D:\Users\o.borisychev.BRAVOSOFT\desktop\Lua-.net-master\Lua-.net-master\Lua .net\Lua .net\bin\x86\KeraLua.dll
 D:\Users\o.borisychev.BRAVOSOFT\desktop\Lua-.net-master\Lua-.net-master\Lua .net\Lua .net\obj\x86\Lua .net ex.exe
+C:\Users\admin\Documents\GitHub\Lua-.net\Lua .net\bin\x86\Lua .net ex.exe.config
+C:\Users\admin\Documents\GitHub\Lua-.net\Lua .net\bin\x86\Lua .net ex.exe
+C:\Users\admin\Documents\GitHub\Lua-.net\Lua .net\bin\x86\core.title.dll
+C:\Users\admin\Documents\GitHub\Lua-.net\Lua .net\bin\x86\NLua.dll
+C:\Users\admin\Documents\GitHub\Lua-.net\Lua .net\bin\x86\KeraLua.dll
+C:\Users\admin\Documents\GitHub\Lua-.net\Lua .net\obj\x86\Lua .net ex.exe
+C:\Users\admin\Documents\GitHub\Lua-.net\Lua .net\obj\x86\Lua .net.csprojResolveAssemblyReference.cache

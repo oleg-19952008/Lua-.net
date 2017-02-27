@@ -1,1 +1,0 @@
-Core:run_arg("shutdown","-a");
